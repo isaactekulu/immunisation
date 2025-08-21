@@ -372,24 +372,31 @@ body {
     background-color: #2563eb;
 }
 
-/* Visitor Counter Styles */
-.visitor-counter {
-    background-color: #f8fafc;
-    border-top: 1px solid #e2e8f0;
-    padding: 10px 0;
-    margin-top: 20px;
+/* Admin Visitor Counter (Hidden from users) */
+.admin-counter {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-family: monospace;
+    z-index: 9999;
+    opacity: 0.4;
+    cursor: pointer;
+    user-select: none;
+    min-width: 60px;
     text-align: center;
 }
 
-.visitor-counter p {
-    color: #64748b;
-    font-size: 14px;
-    font-weight: 400;
+.admin-counter:hover {
+    opacity: 1;
 }
 
-.visitor-counter #visitorCount {
-    font-weight: 600;
-    color: #1e3a8a;
+#visitorCount {
+    font-weight: bold;
 }
 
 /* Responsive Design */

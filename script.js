@@ -342,6 +342,7 @@ function renderTable() {
 // Visitor counter functionality
 function initVisitorCounter() {
     const visitorCountElement = document.getElementById('visitorCount');
+    const adminCounter = document.getElementById('adminCounter');
     const storageKey = 'rosie-ux-unique-visitors';
     const sessionKey = 'rosie-ux-session-visited';
     
@@ -363,6 +364,35 @@ function initVisitorCounter() {
     // Display current count
     const currentCount = parseInt(localStorage.getItem(storageKey)) || 0;
     visitorCountElement.textContent = currentCount;
+    
+    // Add click event for admin reset
+    adminCounter.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const password = prompt('Enter admin password to reset visitor count:');
+        
+        if (password === 'admin123') {
+            const confirmReset = confirm('Are you sure you want to reset the visitor count to 0?');
+            
+            if (confirmReset) {
+                localStorage.setItem(storageKey, '0');
+                visitorCountElement.textContent = '0';
+                alert('Visitor count has been reset to 0.');
+            }
+        } else if (password !== null) {
+            alert('Incorrect password. Access denied.');
+        }
+    });
+    
+    // Debug: Add visual feedback on hover
+    adminCounter.addEventListener('mouseenter', function() {
+        this.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+    });
+    
+    adminCounter.addEventListener('mouseleave', function() {
+        this.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+    });
 }
 
 // Initialize the application when DOM is loaded
