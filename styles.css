@@ -326,22 +326,22 @@ body {
 }
 
 .status-due {
-    color: #ea580c;
+    color: #dc2626;
     font-weight: 600;
 }
 
 .status-given {
-    color: #059669;
+    color: #374151;
     font-weight: 600;
 }
 
 .status-declined {
-    color: #6b7280;
+    color: #374151;
     font-weight: 600;
 }
 
 .status-planned {
-    color: #3b82f6;
+    color: #374151;
     font-weight: 600;
 }
 
@@ -357,9 +357,9 @@ body {
 }
 
 .action-button {
-    background-color: #3b82f6;
-    color: white;
-    border: none;
+    background-color: transparent;
+    color: #3b82f6;
+    border: 1px solid #3b82f6;
     padding: 4px 12px;
     border-radius: 4px;
     font-size: 13px;
@@ -369,7 +369,9 @@ body {
 }
 
 .action-button:hover {
-    background-color: #2563eb;
+    background-color: #f0f9ff;
+    border-color: #2563eb;
+    color: #2563eb;
 }
 
 /* Admin Visitor Counter (Hidden from users) */
