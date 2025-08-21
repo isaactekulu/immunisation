@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immunisation History - Baby Louie</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+        </header>
+
+        <!-- Patient Info and Summary -->
+        <div class="patient-info-section">
+            <div class="patient-header">
+                <div class="patient-title">
+                    <div class="status-indicator overdue"></div>
+                    <h1>Overdue Baby Louie</h1>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn btn-primary">Record influenza</button>
+                    <button class="btn btn-secondary">Record vaccination</button>
+                </div>
+            </div>
+            
+            <div class="patient-summary">
+                <div class="tabs">
+                    <button class="tab active">Consumer summary</button>
+                    <button class="tab">Contact details</button>
+                </div>
+                <div class="summary-content">
+                    <div class="summary-item">
+                        <label>NHI Number</label>
+                        <span>ABC1234</span>
+                    </div>
+                    <div class="summary-item">
+                        <label>Age</label>
+                        <span>3m</span>
+                    </div>
+                    <div class="summary-item">
+                        <label>Gender</label>
+                        <span>Male</span>
+                    </div>
+                    <div class="summary-item">
+                        <label>Ethnicities</label>
+                        <span>New Zealand European<br>Māori</span>
+                    </div>
+                    <div class="summary-item">
+                        <label>Person names</label>
+                        <span>Louis Mitchell</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Immunisation History -->
+        <div class="immunisation-section">
+            <h2>Immunisation History and Plan</h2>
+            
+            <!-- Filter Controls -->
+            <div class="filter-controls">
+                <div class="filter-group">
+                    <label>Filter by status</label>
+                    <div class="filter-buttons">
+                        <button class="filter-btn" data-filter="display-all">Display all</button>
+                        <button class="filter-btn active" data-filter="given-not-done">Given and not done</button>
+                        <button class="filter-btn active" data-filter="due-overdue">Due, overdue, late</button>
+                        <button class="filter-btn" data-filter="planned">Planned</button>
+                    </div>
+                </div>
+                
+                <div class="sort-group">
+                    <label>Sort by</label>
+                    <div class="sort-dropdown">
+                        <button class="sort-btn" id="sortButton">
+                            Due date: Oldest first
+                            <span class="dropdown-arrow">▼</span>
+                        </button>
+                        <div class="sort-options" id="sortOptions">
+                            <div class="sort-option" data-sort="due-oldest">Due date: Oldest first</div>
+                            <div class="sort-option" data-sort="due-newest">Due date: Newest first</div>
+                            <div class="sort-option" data-sort="outcome-oldest">Outcome date: Oldest first</div>
+                            <div class="sort-option" data-sort="outcome-newest">Outcome date: Newest first</div>
+                            <div class="sort-option" data-sort="vaccine-az">Vaccine: A-Z</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- No Filter Message -->
+            <div class="no-filter-message" id="noFilterMessage" style="display: none;">
+                <p>Please select at least one filter to display immunisation data.</p>
+            </div>
+
+            <!-- Immunisation Table -->
+            <div class="table-container" id="tableContainer">
+                <table class="immunisation-table">
+                    <thead>
+                        <tr>
+                            <th>Due Date</th>
+                            <th>Outcome date</th>
+                            <th>Age</th>
+                            <th>Vaccine & Product</th>
+                            <th>Indication</th>
+                            <th>Dose #</th>
+                            <th>Status</th>
+                            <th>View / Record</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <!-- Data will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Visitor Counter -->
+    <footer class="visitor-counter">
+        <div class="container">
+            <p>Unique visitor counter: <span id="visitorCount">0</span></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
